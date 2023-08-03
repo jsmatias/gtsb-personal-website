@@ -1,0 +1,27 @@
+{
+  "name": "jean-s-personal-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "jean-s-personal-website",
+  "author": "jsmatias",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "babel-plugin-styled-components": "^2.1.4",
+    "gatsby": "^5.11.0",
+    "gatsby-plugin-netlify-cms": "^7.11.0",
+    "gatsby-plugin-styled-components": "^6.11.0",
+    "netlify-cms-app": "^2.15.72",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^6.0.7"
+  }
+}

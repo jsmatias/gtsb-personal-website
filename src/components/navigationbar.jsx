@@ -86,7 +86,7 @@ function NavigationBar() {
       </NavItem>
       <NavItem
         className={`navitem${isNavbarExpanded ? "-expanded" : ""}`}
-        href="/cv"
+        href="/resume"
       >
         Resume
       </NavItem>

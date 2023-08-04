@@ -25,11 +25,7 @@ const FooterWrapper = styled.div`
   box-sizing: border-box;
 `;
 const InfoWrapper = styled.div`
-  // @media screen and (max-width: 440px){
-  //   padding: 0.9rem;
-  //   font-size: 0.7rem;
-  // }
-  @media screen and (max-width: 630px) {
+  @media screen and (max-width: 810px) {
     grid-template-columns: 1fr;
   }
   display: grid;
@@ -39,6 +35,9 @@ const InfoWrapper = styled.div`
 `;
 
 const ContactWrapper = styled.ul`
+  @media screen and (max-width: 810px) {
+    justify-content: center;
+  }
   box-sizing: border-box;
   font-size: 0.85rem;
   margin: auto;
@@ -66,18 +65,17 @@ const ContactWrapper = styled.ul`
 `;
 
 const NavWrapper = styled.ul`
-  @media screen and (max-width: 630px) {
+  @media screen and (max-width: 810px) {
     border-right: 0rem;
+    justify-content: center;
   }
   box-sizing: border-box;
   font-size: 0.85rem;
   margin: auto;
   width: 100%;
   height: 100%;
-  // color: ${colors.gray};
   border-right: 0.1rem solid ${colors.gray};
   display: flex;
-  background-color: transparent;
   align-items: center;
   justify-content: right;
   padding: 1rem;
@@ -155,7 +153,7 @@ const Footer = () => (
               </Link>
             </li>
             <li className="mainNav__item">
-              <Link to="/cv">
+              <Link to="/resume">
                 <LinkWrapper>
                   <FontAwesomeIcon icon={faIdCard} /> {`   `} Resume
                 </LinkWrapper>

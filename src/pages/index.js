@@ -1,41 +1,56 @@
 import React from "react";
 import Layout from "../layout/layout";
-// import TextBlock from '../components/textblock';
-import '../layout/layout.css'
-
+import TextBlock from "../components/textblock";
+import "../layout/layout.css";
 
 const IndexPage = () => (
-  // <Layout visitcard={true}>
   <Layout visitcard={true}>
-    Test
-    {/* <TextBlock 
-      title = "Let me introduce myself"
-      subtitle = "🔬 My PhD Research"
-      textString = {`Currently, I’m working on a PhD project in Biophotonics at the Tyndall
-      National Institute, Cork - Ireland, which comprises on building an novel opto-electronic equipment to measure 
-      the efficiency of a class of nanoparticles that up-convert light in a process similar to fluorescence. 
-      Please, have a look at the Research page to know more about it. 
+    <TextBlock
+      title="Let me introduce myself"
+      subtitle="🔬 My exciting Researcher career"
+      textString={`I embarked on a diverse research journey, beginning with a physics degree specializing in quantum mechanics
+      and condensed matter physics. During my master's, I explored the fascinating nexus of quantum mechanics and nanotechnology, 
+      engaging in projects focused on solid crystal synthesis and characterization. 
+      My Ph.D. propelled me into the world of opto-electronics, where I crafted a complex device to unveil the mysteries 
+      of nanoparticles converting invisible light to visible.
+
+      Driven by a passion for coding and curiosity, my trajectory shifted towards artificial intelligence. 
+      Collaborating with the groundbreaking AI4Europe project, I now find myself at the confluence of research and industry, 
+      poised to uncover transformative discoveries. This narrative of exploration continues, 
+      as I stand poised to illuminate uncharted realms of knowledge. 
       `}
     />
 
     <TextBlock
-      subtitle = "💻 Programming"
-      textString = {`I'm also passionate with programming. During my master's I started using Python for 
-      data analysis as an alternative to a graphical software called Origin due to incompatibilities with Ubuntu
-      that was my operational system at that time. It turned out that I loved it and kept using Python ever since.
-      Working as Data analyst, I got interest in other programming languages, and I started to hop on 
-      side projects involving languages and frameworks other than python, such as this simple webpage developed with 
-      Gatsby (a JavaScript framework).
+      subtitle="💻 Exploring the Code World"
+      textString={`Oh, let's talk about my digital alter ego – the coding enthusiast! 
+      My coding journey started during my master's when I stumbled upon Python. 
+      It all began as a workaround for compatibility issues with my trusty Ubuntu OS, 
+      which had a little feud with the graphical software I used.
+      As fate would have it, Python charmed its way into my heart, and we've been inseparable ever since. 
+      My career as a Data Analyst further stoked my curiosity, 
+      nudging me to venture into the realms of different programming languages and frameworks. 
+      From side gigs to passion projects, I've dabbled in languages beyond Python's embrace.
+      
+      And hey, remember this nifty webpage you're exploring? It's more than just text and visuals 
+      – it's a product of my affair with Gatsby, a slick JavaScript framework that adds that extra zing to web development. 
+      Ready for more coding adventures? Buckle up, because there's so much more to come! 🚀
       `}
     />
 
     <TextBlock
-      subtitle = "📈 Finance"
-      textString = {`A third personal interest is the financial market. And this is the best part because I can use Python 
-        to analyse and test strategies of investment and trades on different equities of the stock market. If you're curious about 
-        these side projects, have a look at the Projects page. 
+      subtitle="📈 Exploring the Financial World"
+      textString={`
+      Now, let's dive into the thrilling realm of the financial market! 
+      I have a keen interest in understanding its ever-changing dynamics. 
+      The best part? I get to harness the power of Python to analyze and test investment strategies and trades across 
+      various equities of the stock market.
+      Curious about these financial side quests? I've documented some exciting projects on the "Projects" page, 
+      where you can peek into my financial journey. From crunching numbers to making informed decisions, 
+      it's a realm where data-driven insights meet the world of investments.
+      Join me on this adventure into the heart of numbers and watch this space for more captivating financial escapades! 📊 
       `}
-    /> */}
+    />
   </Layout>
 );
 

@@ -1,7 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "gatsby";
+import React, { useState } from "react";
 import { styled } from "styled-components";
-// import './App.css';
 
 const NavBar = styled.nav`
   padding: 1rem 2rem;
@@ -11,6 +9,9 @@ const NavBar = styled.nav`
   top: 0;
   left: 0;
   box-sizing: border-box;
+  &.navbar-expanded {
+    display: grid;
+  }
 `;
 
 const NavItem = styled.a`
@@ -25,32 +26,35 @@ const NavItem = styled.a`
   }
 `;
 
+const MenuButton = styled.button`
+  color: white;
+  background: gray;
+  display: block;
+  float: right;
+  border: none;
+  font-size: 2rem;
+  &:hover {
+    transition: background-color 0.5s;
+    background-color: black;
+  }
+`;
+
 function NavigationBar() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  // const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     setWindowWidth(window.innerWidth);
-  //   };
-
-  //   window.addEventListener("resize", handleResize);
-
-  //   return () => {
-  //     window.removeEventListener("resize", handleResize);
-  //   };
-  // }, []);
+  const [isNavbarExpanded, setIsNavbarExpanded] = useState(false);
 
   const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
+    setIsNavbarExpanded(!isNavbarExpanded);
   };
 
   return (
-    <NavBar className={`navbar${isSidebarOpen ? "-expanded" : ""}`}>
+    <NavBar className={`navbar${isNavbarExpanded ? "-expanded" : ""}`}>
       <NavItem href="/">Home</NavItem>
       <NavItem href="/research">Research</NavItem>
       <NavItem href="/projects">Projects</NavItem>
       <NavItem href="/cv">Resume</NavItem>
+      <MenuButton onClick={toggleSidebar}>
+        {isNavbarExpanded ? `\u2715` : `\u2630`}
+      </MenuButton>
     </NavBar>
   );
 }

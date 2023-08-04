@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { styled } from "styled-components";
 import { colors } from "../layout/layout-config";
-
+import "@fontsource/josefin-sans";
 
 const NavBar = styled.nav`
   padding: 1rem 2rem;
@@ -10,6 +10,7 @@ const NavBar = styled.nav`
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 1000;
   box-sizing: border-box;
   &.navbar-expanded {
     display: grid;
@@ -23,7 +24,8 @@ const NavItem = styled.a`
   text-transform: uppercase;
   font-weight: bold;
   font-size: 1rem;
-  letter-spacing: 5px;
+  font-family: "Josefin Sans", Arial, sans-serif;
+  letter-spacing: 1px;
   text-decoration: none;
   color: ${colors.white};
   display: block;

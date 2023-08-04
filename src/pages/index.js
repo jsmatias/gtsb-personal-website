@@ -1,7 +1,8 @@
 import React from "react";
 import Layout from "../layout/layout";
 // import TextBlock from '../components/textblock';
-// import '../style/global.css'
+import '../layout/layout.css'
+
 
 const IndexPage = () => (
   // <Layout visitcard={true}>

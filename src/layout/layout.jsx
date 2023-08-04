@@ -1,23 +1,22 @@
-import { graphql, StaticQuery } from 'gatsby'
-import PropTypes from 'prop-types'
-import React from 'react'
+import { graphql, StaticQuery } from "gatsby";
+import PropTypes from "prop-types";
+import React from "react";
 // import Helmet from 'react-helmet'
-import styled from 'styled-components'
-import Footer from '../components/footer'
-import NavigationBar from '../components/navigationbar'
-// import Header from './header'
-// import VisitCard from './visitcard'
-import { colors } from './layout-config'
-
+import styled from "styled-components";
+import Footer from "../components/footer";
+import NavigationBar from "../components/navigationbar";
+import VisitCard from "../components/visitcard";
+import { colors } from "./layout-config";
 
 const Body = styled.div`
   background: ${colors.white};
   margin: auto;
-  margin-bottom: 8rem;
+  margin-bottom: 5em;
+  margin-top: 5em;
   max-width: 800px;
-  min-height: 500px; 
+  min-height: 500px;
   padding: 1.5rem;
-`
+`;
 
 const Layout = ({ children, visitcard }) => (
   <StaticQuery
@@ -30,7 +29,7 @@ const Layout = ({ children, visitcard }) => (
         }
       }
     `}
-    render={data => (
+    render={(data) => (
       <React.Fragment>
         {/* <Helmet
           title={data.site.siteMetadata.title}
@@ -41,23 +40,18 @@ const Layout = ({ children, visitcard }) => (
         >
           <html lang="en" />
         </Helmet> */}
-        <NavigationBar/>
-        {/* <Header/> */}
-        {/* <SideBar/> */}
-        {/* {visitcard ? <VisitCard/> : ''} */}
-        <Body>
-          {children}
-        </Body>
-        <Footer/>
+        <NavigationBar />
+        {visitcard ? <VisitCard /> : ""}
+        <Body>{children}</Body>
+        <Footer />
       </React.Fragment>
     )}
   />
-)
-
+);
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  // visitcard: PropTypes.bool,
-}
+  visitcard: PropTypes.bool,
+};
 
-export default Layout
+export default Layout;

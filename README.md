@@ -31,6 +31,8 @@ cd personal-webpage
 
 2. Install dependencies
 
+<!-- might need to use the flag to install--legacy-peer-deps -->
+
 ```bash
 npm install
 ```

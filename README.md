@@ -1,49 +1,54 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby Minimal Starter
-</h1>
+# Personal Webpage Project
 
-## 🚀 Quick start
+<!-- ![GitHub](https://img.shields.io/github/license/jsmatias/gtsb-personal-website)
+![Netlify](https://img.shields.io/netlify/your-netlify-site-id) -->
+![React](https://img.shields.io/badge/React-v18.2.0-blue)
+![Gatsby](https://img.shields.io/badge/Gatsby-v5.11.0-green)
 
-1.  **Create a Gatsby site.**
+This project is my personal webpage built using ReactJS and Gatsby, and it's deployed on Netlify. The webpage showcases my portfolio, projects, and information about me.
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+## Table of Contents
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+- [Personal Webpage Project](#personal-webpage-project)
+  - [Table of Contents](#table-of-contents)
+  - [Description](#description)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Deployment](#deployment)
 
-2.  **Start developing.**
+## Description
 
-    Navigate into your new site’s directory and start it up.
+My personal webpage is designed to provide an interactive and informative platform to showcase my professional journey, skills, and projects. It's built using Gatsby, a React-based static site generator, which allows for fast loading times and easy content management.
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+## Installation
 
-3.  **Open the code and start customizing!**
+1. Clone the repository:
 
-    Your site is now running at http://localhost:8000!
+```bash
+git clone https://github.com/yourusername/personal-webpage.git
+cd personal-webpage
+```
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+2. Install dependencies
 
-4.  **Learn more**
+```bash
+npm install
+```
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Tutorials](https://www.gatsbyjs.com/docs/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Guides](https://www.gatsbyjs.com/docs/how-to/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+## Usage
 
-## 🚀 Quick start (Netlify)
+1. Start development server:
+
+```bash
+npm develop
+```
+
+2. Open your web browser and navigate to http://localhost:8000 to see the webpage in action.
+
+## Deployment
 
 Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
 
 [<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal)
+
+

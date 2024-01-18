@@ -3,7 +3,9 @@
 <!-- ![GitHub](https://img.shields.io/github/license/jsmatias/gtsb-personal-website)
 ![Netlify](https://img.shields.io/netlify/your-netlify-site-id) -->
 ![React](https://img.shields.io/badge/React-v18.2.0-blue)
-![Gatsby](https://img.shields.io/badge/Gatsby-v5.11.0-green)
+![Gatsby](https://img.shields.io/badge/Gatsby-v5.13.1-green)
+[![Node.js Version](https://img.shields.io/badge/Node.js-v20.11.0-brightgreen)](https://nodejs.org/)
+
 
 This project is my personal webpage built using ReactJS and Gatsby, and it's deployed on Netlify. The webpage showcases my portfolio, projects, and information about me.
 
@@ -25,8 +27,8 @@ My personal webpage is designed to provide an interactive and informative platfo
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/personal-webpage.git
-cd personal-webpage
+git clone https://github.com/jsmatias/personal-webpage.git
+cd gtsb-personal-website
 ```
 
 2. Install dependencies
@@ -42,7 +44,7 @@ npm install
 1. Start development server:
 
 ```bash
-npm develop
+npm run develop
 ```
 
 2. Open your web browser and navigate to http://localhost:8000 to see the webpage in action.

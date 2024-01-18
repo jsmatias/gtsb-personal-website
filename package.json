@@ -14,19 +14,23 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
+  "engines": {
+    "node": ">=20.11.0"
+  },
   "dependencies": {
-    "@fontsource/josefin-sans": "^5.0.7",
-    "@fortawesome/fontawesome-svg-core": "^6.4.2",
-    "@fortawesome/free-brands-svg-icons": "^6.4.2",
-    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@fontsource/josefin-sans": "^5.0.18",
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@fortawesome/free-brands-svg-icons": "^6.5.1",
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "babel-plugin-styled-components": "^2.1.4",
-    "gatsby": "^5.11.0",
-    "gatsby-plugin-netlify-cms": "^7.11.0",
-    "gatsby-plugin-styled-components": "^6.11.0",
+    "gatsby": "^5.13.1",
+    "gatsby-plugin-netlify-cms": "^7.12.1",
+    "gatsby-plugin-styled-components": "^6.13.0",
+    "graphql": "^16.8.1",
     "netlify-cms-app": "^2.15.72",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-components": "^6.0.7"
+    "styled-components": "^6.1.8"
   }
 }

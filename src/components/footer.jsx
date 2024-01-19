@@ -4,7 +4,6 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHome,
-  faIdCard,
   faVial,
   faTerminal,
   faEnvelope,
@@ -149,13 +148,6 @@ const Footer = () => (
               <Link to="/projects">
                 <LinkWrapper>
                   <FontAwesomeIcon icon={faTerminal} /> {`   `} Projects
-                </LinkWrapper>
-              </Link>
-            </li>
-            <li className="mainNav__item">
-              <Link to="/resume">
-                <LinkWrapper>
-                  <FontAwesomeIcon icon={faIdCard} /> {`   `} Resume
                 </LinkWrapper>
               </Link>
             </li>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { styled } from "styled-components";
 import { colors } from "../layout/layout-config";
 import "@fontsource/josefin-sans";
@@ -12,33 +12,66 @@ const NavBar = styled.nav`
   left: 0;
   z-index: 1000;
   box-sizing: border-box;
+  display: flex;
   &.navbar-expanded {
     display: grid;
   }
 `;
 
-const NavItem = styled.a`
+const NavItem = styled.div`
   @media screen and (max-width: 700px) {
     display: none;
   }
-  text-transform: uppercase;
+  position: relative;
+  &.nav-item-expanded {
+    display: block;
+  }
+  // ul {
+  //   display: none;
+  // }
+  // &:hover ul {
+  //   display: grid;
+  // }
+`;
+
+const NavSubItem = styled.a`
+  display: block;
+  float: left;
+  padding: 0.5rem 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
   font-weight: bold;
   font-size: 1rem;
   font-family: "Josefin Sans", Arial, sans-serif;
   letter-spacing: 1px;
   text-decoration: none;
   color: ${colors.white};
-  display: block;
-  float: left;
-  padding: 0.5rem 1.5rem;
   &:hover {
     transition: background 0.5s;
     background: ${colors.gray};
   }
-  &.navitem-expanded {
-    display: block;
-    transition: height 0.5s;
+  &.sub-item-heading {
+    text-transform: uppercase;
   }
+`;
+
+const List = styled.ul`
+  @media screen and (max-width: 700px) {
+    position: initial;
+  }
+  transition: max-height 0.3s ease-in;
+  overflow: hidden;
+  display: grid;
+  max-height: ${({ isOpen }) => (isOpen ? "1000px" : "0")};
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 100%; // Position it below the parent item
+  left: 0;
+  background: ${colors.black};
+  width: 100%;
 `;
 
 const MenuButton = styled.button`
@@ -59,36 +92,73 @@ const MenuButton = styled.button`
 
 function NavigationBar() {
   const [isNavbarExpanded, setIsNavbarExpanded] = useState(false);
+  const [isResearchSubMenuOpen, setResearchSubMenuOpen] = useState(false);
+  const [isProjectsSubMenuOpen, setProjectsSubMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    const closeMenuOnOutsideClick = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsNavbarExpanded(false);
+        setResearchSubMenuOpen(false);
+        setProjectsSubMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("click", closeMenuOnOutsideClick);
+
+    return () => {
+      document.removeEventListener("click", closeMenuOnOutsideClick);
+    };
+  }, []);
 
   const toggleSidebar = () => {
     setIsNavbarExpanded(!isNavbarExpanded);
   };
 
+  const toggleResearchSubMenu = () => {
+    setProjectsSubMenuOpen(false);
+    setResearchSubMenuOpen(!isResearchSubMenuOpen);
+  };
+
+  const toggleProjectsSubMenu = () => {
+    setResearchSubMenuOpen(false);
+    setProjectsSubMenuOpen(!isProjectsSubMenuOpen);
+  };
+
   return (
-    <NavBar className={`navbar${isNavbarExpanded ? "-expanded" : ""}`}>
-      <NavItem
-        className={`navitem${isNavbarExpanded ? "-expanded" : ""}`}
-        href="/"
-      >
-        Home
+    <NavBar
+      ref={menuRef}
+      className={`navbar${isNavbarExpanded ? "-expanded" : ""}`}
+    >
+      <NavItem className={`nav-item${isNavbarExpanded ? "-expanded" : ""}`}>
+        <NavSubItem className="sub-item-heading" href="/">
+          Home
+        </NavSubItem>
       </NavItem>
-      <NavItem
-        className={`navitem${isNavbarExpanded ? "-expanded" : ""}`}
-        href="/research"
-      >
-        Research
+      <NavItem className={`nav-item${isNavbarExpanded ? "-expanded" : ""}`}>
+        <NavSubItem
+          className="sub-item-heading"
+          onClick={toggleResearchSubMenu}
+        >
+          Research
+        </NavSubItem>
+        <List isOpen={isResearchSubMenuOpen}>
+          <NavSubItem href="/research">Research Item 1</NavSubItem>
+          <NavSubItem href="/research-2">Research Item 2</NavSubItem>
+        </List>
       </NavItem>
-      <NavItem
-        className={`navitem${isNavbarExpanded ? "-expanded" : ""}`}
-        href="/projects"
-      >
-        Projects
-      </NavItem>
-      <NavItem
-        className={`navitem${isNavbarExpanded ? "-expanded" : ""}`}
-        href="/resume"
-      >
-        Resume
+      <NavItem className={`nav-item${isNavbarExpanded ? "-expanded" : ""}`}>
+        <NavSubItem
+          className="sub-item-heading"
+          onClick={toggleProjectsSubMenu}
+        >
+          Projects
+        </NavSubItem>
+        <List isOpen={isProjectsSubMenuOpen}>
+          <NavSubItem href="/projects">Project 1</NavSubItem>
+          <NavSubItem href="/projects-2">Project 2</NavSubItem>
+        </List>
       </NavItem>
       <MenuButton onClick={toggleSidebar}>
         {isNavbarExpanded ? `\u2715` : `\u2630`}

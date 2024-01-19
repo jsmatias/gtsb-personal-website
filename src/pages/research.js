@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from '../layout/layout'
 import TextBlock from '../components/textblock'
+import Divider from '../components/divider'
 
 const Research = () => (
   <Layout>
@@ -37,6 +38,7 @@ const Research = () => (
       poised to pave the way for the creation of new particles boasting unparalleled efficiency.
       `}
     />
+    <Divider/>
   </Layout>
 )
 

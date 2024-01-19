@@ -31,15 +31,6 @@ const Layout = ({ children, visitcard }) => (
     `}
     render={(data) => (
       <React.Fragment>
-        {/* <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
-          ]}
-        >
-          <html lang="en" />
-        </Helmet> */}
         <NavigationBar />
         {visitcard ? <VisitCard /> : ""}
         <Body>{children}</Body>

@@ -4,14 +4,14 @@
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.jsmatias.net",
-    title: 'Jean Matias - Physicist and Data Analyst',
+    title: 'Jean Matias - Physicist and Developer',
     name: 'Jean Matias',
     nickname: 'jsmatias',
-    profession: 'Developer and Physicist',
+    profession: 'Physicist and Developer',
     address: 'Cork/Ireland',
     email: 'smatias.jean@gmail.com',
-    jobemail: 'jean.matias@tyndall.ie',
-    phone: '+353 21 243 6511',
+    jobemail: 'jean.matias@insight-centre.org',
+    phone: '',
     mobile: '+353 83 066 1681',
     linkedin: 'https://www.linkedin.com/in/jean-matias-496526140/',
     facebook: '',
@@ -20,8 +20,8 @@ module.exports = {
     github: 'https://github.com/jsmatias',
     web: 'https://www.jsmatias.net',
     lastUpdate: {
-      year: '2023',
-      month: 'Aug'
+      year: '2024',
+      month: 'Jan'
     },
   },
   plugins: ["gatsby-plugin-netlify-cms", "gatsby-plugin-styled-components"]

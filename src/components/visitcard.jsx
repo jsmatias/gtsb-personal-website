@@ -5,11 +5,10 @@ import headshot from "../images/headshot.jpg";
 import "@fontsource/josefin-sans";
 import { Link, StaticQuery, graphql } from "gatsby";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import { faLinkedin, faGithub} from '@fortawesome/free-brands-svg-icons'
-import { colors } from '../layout/layout-config'
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { colors } from "../layout/layout-config";
 
 const VisitCardParent = styled.div`
   @media screen and (max-width: 600px) {
@@ -114,7 +113,6 @@ const Contact = styled.div`
   padding: 1rem;
 `;
 
-
 const List = styled.ul`
   display: flex;
   align-items: center;
@@ -124,13 +122,13 @@ const List = styled.ul`
   padding: 0rem;
   .mainNav__item {
     align-items: stretch;
-    width:100%;
-    height: 1.3rem;  
+    width: 100%;
+    height: 1.3rem;
     margin: auto;
     display: flex;
     align-items: stretch;
     justify-content: center;
-    & : hover{
+    &: hover {
       color: white;
     }
     & > a {
@@ -140,70 +138,72 @@ const List = styled.ul`
       text-decoration: none;
       width: 100%;
       color: ${colors.gray};
-      & : hover {
+      &: hover {
         color: ${colors.white};
       }
     }
   }
-`
+`;
 
-const ContactDetails = ({ label }) => {
-  return (
-    <StaticQuery
-      query={graphql`
-        {
-          site {
-            siteMetadata {
-              email
-              linkedin
-              github
-            }
-          }
-        }
-      `}
-    >
-      {(data) => {
-        return (
-          <List>
-            <li className="mainNav__item">
-              <Link to={data.site.siteMetadata.linkedin}>
-                <FontAwesomeIcon icon={faLinkedin} />
-              </Link>
-            </li>
-            <li className="mainNav__item">
-              <Link to={data.site.siteMetadata.github}>
-                <FontAwesomeIcon icon={faGithub} />
-              </Link>
-            </li>
-            <li className="mainNav__item">
-              <a href={`mailto:${data.site.siteMetadata.email}`}>
-                <FontAwesomeIcon icon={faEnvelope} />
-                {label ? `. Email` : null}
-              </a>
-            </li>
-          </List>
-        );
-      }}
-    </StaticQuery>
-  );
-};
+const ContactDetails = ({ label, data }) => (
+  <List>
+    <li className="mainNav__item">
+      <Link to={data.site.siteMetadata.linkedin}>
+        <FontAwesomeIcon icon={faLinkedin} />
+      </Link>
+    </li>
+    <li className="mainNav__item">
+      <Link to={data.site.siteMetadata.github}>
+        <FontAwesomeIcon icon={faGithub} />
+      </Link>
+    </li>
+    <li className="mainNav__item">
+      <a href={`mailto:${data.site.siteMetadata.email}`}>
+        <FontAwesomeIcon icon={faEnvelope} />
+        {label ? `. Email` : null}
+      </a>
+    </li>
+  </List>
+);
 
 const VisitCard = () => (
-  <VisitCardParent className={"instaFade"}>
-    <VisitCardWraper className={"quickFade delayFive"}>
-      <TitleWraper>
-        <Circle>
-          <img src={headshot} alt="Jean Matias" title="Jean Matias" />
-        </Circle>
-        <span className="titleIntro">Hi, there!</span>
-        <span className="titleName">
-          I'm <span className="name">Jean Matias</span>
-        </span>
-        <span className="titleDetails">Physicist and Data Analyst</span>
-        <Contact>{<ContactDetails label={false}/>}</Contact>
-      </TitleWraper>
-    </VisitCardWraper>
-  </VisitCardParent>
+  <StaticQuery
+    query={graphql`
+      {
+        site {
+          siteMetadata {
+            name
+            profession
+            email
+            linkedin
+            github
+          }
+        }
+      }
+    `}
+  >
+    {(data) => {
+      return (
+        <VisitCardParent className={"instaFade"}>
+          <VisitCardWraper className={"quickFade delayFive"}>
+            <TitleWraper>
+              <Circle>
+                <img src={headshot} alt="Jean Matias" title="Jean Matias" />
+              </Circle>
+              <span className="titleIntro">Hi, there!</span>
+              <span className="titleName">
+                I'm <span className="name">{data.site.siteMetadata.name}</span>
+              </span>
+              <span className="titleDetails">
+                {data.site.siteMetadata.profession}
+              </span>
+              <Contact>{<ContactDetails label={false} data={data} />}</Contact>
+            </TitleWraper>
+          </VisitCardWraper>
+        </VisitCardParent>
+      );
+    }}
+  </StaticQuery>
 );
 
 export default VisitCard;

@@ -1,9 +1,9 @@
 import React from 'react'
-import Layout from '../layout/layout'
-import TextBlock from '../components/textblock'
-import Divider from '../components/divider'
+import Layout from '../../layout/layout'
+import TextBlock from '../../components/textblock'
+import Divider from '../../components/divider'
 
-const Research = () => (
+const ResearchMyPhD = () => (
   <Layout>
     <TextBlock
       title = "My PhD Odyssey: Unraveling the Efficiency of Upconverting Nanoparticles"
@@ -42,4 +42,4 @@ const Research = () => (
   </Layout>
 )
 
-export default Research
+export default ResearchMyPhD

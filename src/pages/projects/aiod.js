@@ -1,8 +1,8 @@
 import React from 'react'
-import Layout from '../layout/layout'
-import TextBlock from '../components/textblock'
+import Layout from '../../layout/layout'
+import TextBlock from '../../components/textblock'
 
-const Projects = () => (
+const ProjectAIoD = () => (
   <Layout>
     <TextBlock
       title = "Welcome to the projects page!"
@@ -16,4 +16,4 @@ const Projects = () => (
   </Layout>
 )
 
-export default Projects
+export default ProjectAIoD

@@ -19,19 +19,14 @@ const NavBar = styled.nav`
 `;
 
 const NavItem = styled.div`
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 750px) {
     display: none;
   }
+  min-width: 15rem;
   position: relative;
   &.nav-item-expanded {
     display: block;
   }
-  // ul {
-  //   display: none;
-  // }
-  // &:hover ul {
-  //   display: grid;
-  // }
 `;
 
 const NavSubItem = styled.a`
@@ -57,7 +52,7 @@ const NavSubItem = styled.a`
 `;
 
 const List = styled.ul`
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 750px) {
     position: initial;
   }
   transition: max-height 0.3s ease-in;
@@ -75,7 +70,7 @@ const List = styled.ul`
 `;
 
 const MenuButton = styled.button`
-  @media screen and (min-width: 700px) {
+  @media screen and (min-width: 750px) {
     display: none;
   }
   color: ${colors.white};
@@ -139,25 +134,29 @@ function NavigationBar() {
       <NavItem className={`nav-item${isNavbarExpanded ? "-expanded" : ""}`}>
         <NavSubItem
           className="sub-item-heading"
-          onClick={toggleResearchSubMenu}
+          onMouseOver={toggleResearchSubMenu}
         >
           Research
         </NavSubItem>
         <List isOpen={isResearchSubMenuOpen}>
-          <NavSubItem href="/research">Research Item 1</NavSubItem>
-          <NavSubItem href="/research-2">Research Item 2</NavSubItem>
+          <NavSubItem href="/research/my-phd">My PhD journey</NavSubItem>
+          {/* <NavSubItem href="/research/trustworthy-ai">
+            Trustworthy AI
+          </NavSubItem> */}
         </List>
       </NavItem>
       <NavItem className={`nav-item${isNavbarExpanded ? "-expanded" : ""}`}>
         <NavSubItem
           className="sub-item-heading"
-          onClick={toggleProjectsSubMenu}
+          onMouseOver={toggleProjectsSubMenu}
         >
           Projects
         </NavSubItem>
         <List isOpen={isProjectsSubMenuOpen}>
-          <NavSubItem href="/projects">Project 1</NavSubItem>
-          <NavSubItem href="/projects-2">Project 2</NavSubItem>
+          <NavSubItem href="/projects/trading-tests">
+            Framework for testing trading strategies
+          </NavSubItem>
+          {/* <NavSubItem href="/projects/aiod">AI on Demand</NavSubItem> */}
         </List>
       </NavItem>
       <MenuButton onClick={toggleSidebar}>

@@ -11,7 +11,7 @@ import { colors } from "./layout-config";
 const Body = styled.div`
   background: ${colors.white};
   margin: auto;
-  margin-bottom: 5em;
+  margin-bottom: 7em;
   margin-top: 5em;
   max-width: 800px;
   min-height: 500px;

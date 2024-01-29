@@ -130,7 +130,8 @@ function NavigationBar() {
     >
       <NavItem className={`nav-item${isNavbarExpanded ? "-expanded" : ""}`}>
         <NavSubItem className="sub-item-heading" href="/">
-          <FontAwesomeIcon icon={faHome} /> {`   `} Home
+          <FontAwesomeIcon icon={faHome} style={{ fontSize: "16px" }} /> {`   `}{" "}
+          Home
         </NavSubItem>
       </NavItem>
       <NavItem className={`nav-item${isNavbarExpanded ? "-expanded" : ""}`}>
@@ -138,7 +139,8 @@ function NavigationBar() {
           className="sub-item-heading"
           onClick={toggleResearchSubMenu}
         >
-          <FontAwesomeIcon icon={faAtom} /> {`   `} Research
+          <FontAwesomeIcon icon={faAtom} style={{ fontSize: "16px" }} /> {`   `}{" "}
+          Research
         </NavSubItem>
         <List isOpen={isResearchSubMenuOpen}>
           <NavSubItem href="/research/research">My Research</NavSubItem>

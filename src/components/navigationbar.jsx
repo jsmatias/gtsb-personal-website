@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import { styled } from "styled-components";
 import { colors } from "../layout/layout-config";
 import "@fontsource/josefin-sans";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome, faAtom, faTerminal } from "@fortawesome/free-solid-svg-icons";
 
 const NavBar = styled.nav`
   padding: 1rem 2rem;
@@ -128,37 +130,40 @@ function NavigationBar() {
     >
       <NavItem className={`nav-item${isNavbarExpanded ? "-expanded" : ""}`}>
         <NavSubItem className="sub-item-heading" href="/">
-          Home
+          <FontAwesomeIcon icon={faHome} /> {`   `} Home
         </NavSubItem>
       </NavItem>
       <NavItem className={`nav-item${isNavbarExpanded ? "-expanded" : ""}`}>
         <NavSubItem
           className="sub-item-heading"
-          onMouseOver={toggleResearchSubMenu}
+          onClick={toggleResearchSubMenu}
         >
-          Research
+          <FontAwesomeIcon icon={faAtom} /> {`   `} Research
         </NavSubItem>
         <List isOpen={isResearchSubMenuOpen}>
-          <NavSubItem href="/research/my-phd">My PhD journey</NavSubItem>
+          <NavSubItem href="/research/research">My Research</NavSubItem>
+          <NavSubItem href="/research/my-phd-journey">
+            My PhD journey
+          </NavSubItem>
           {/* <NavSubItem href="/research/trustworthy-ai">
             Trustworthy AI
           </NavSubItem> */}
         </List>
       </NavItem>
-      <NavItem className={`nav-item${isNavbarExpanded ? "-expanded" : ""}`}>
+      {/* <NavItem className={`nav-item${isNavbarExpanded ? "-expanded" : ""}`}>
         <NavSubItem
           className="sub-item-heading"
           onMouseOver={toggleProjectsSubMenu}
         >
-          Projects
+          <FontAwesomeIcon icon={faTerminal} /> {`   `} Projects
         </NavSubItem>
         <List isOpen={isProjectsSubMenuOpen}>
           <NavSubItem href="/projects/trading-tests">
             Framework for testing trading strategies
           </NavSubItem>
-          {/* <NavSubItem href="/projects/aiod">AI on Demand</NavSubItem> */}
+          <NavSubItem href="/projects/aiod">AI on Demand</NavSubItem>
         </List>
-      </NavItem>
+      </NavItem> */}
       <MenuButton onClick={toggleSidebar}>
         {isNavbarExpanded ? `\u2715` : `\u2630`}
       </MenuButton>

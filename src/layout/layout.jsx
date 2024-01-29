@@ -10,6 +10,7 @@ import { colors } from "./layout-config";
 
 const Body = styled.div`
   background: ${colors.white};
+  text-align: justify;
   margin: auto;
   margin-bottom: 7em;
   margin-top: 5em;

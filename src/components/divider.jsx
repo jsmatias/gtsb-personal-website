@@ -1,15 +1,15 @@
-import React from 'react'
-import styled from 'styled-components'
-import { colors } from '../layout/layout-config'
+import React from "react";
+import styled from "styled-components";
+import { colors } from "../layout/layout-config";
 
 const Div = styled.div`
-    border-bottom: 0.1rem solid ${colors.black};
-`
+  border-bottom: 0.1rem solid ${colors.gray};
+`;
 
 const Divider = () => (
-    <React.Fragment>
-        <Div/>
-    </React.Fragment>
-)
+  <React.Fragment>
+    <Div />
+  </React.Fragment>
+);
 
-export default Divider
+export default Divider;

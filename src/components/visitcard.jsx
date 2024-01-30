@@ -149,17 +149,26 @@ const ContactDetails = ({ label, data }) => (
   <List>
     <li className="mainNav__item">
       <Link to={data.site.siteMetadata.linkedin}>
-        <FontAwesomeIcon icon={faLinkedin} />
+        <FontAwesomeIcon
+          icon={faLinkedin}
+          style={{ maxHeight: "1rem", overflow: "hidden" }}
+        />
       </Link>
     </li>
     <li className="mainNav__item">
       <Link to={data.site.siteMetadata.github}>
-        <FontAwesomeIcon icon={faGithub} />
+        <FontAwesomeIcon
+          icon={faGithub}
+          style={{ maxHeight: "1rem", overflow: "hidden" }}
+        />
       </Link>
     </li>
     <li className="mainNav__item">
       <a href={`mailto:${data.site.siteMetadata.email}`}>
-        <FontAwesomeIcon icon={faEnvelope} />
+        <FontAwesomeIcon
+          icon={faEnvelope}
+          style={{ maxHeight: "1rem", overflow: "hidden" }}
+        />
         {label ? `. Email` : null}
       </a>
     </li>

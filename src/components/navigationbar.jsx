@@ -132,7 +132,7 @@ function NavigationBar() {
         <NavSubItem className="sub-item-heading" href="/">
           <FontAwesomeIcon
             icon={faHome}
-            style={{ maxHeight: "16px", overflow: "hidden" }}
+            style={{ maxHeight: "1rem", overflow: "hidden" }}
           />{" "}
           {`   `} Home
         </NavSubItem>

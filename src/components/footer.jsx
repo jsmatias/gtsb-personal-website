@@ -135,14 +135,22 @@ const Footer = () => (
             <li className="mainNav__item">
               <Link to="/">
                 <LinkWrapper>
-                  <FontAwesomeIcon icon={faHome} /> {`   `} Home
+                  <FontAwesomeIcon
+                    icon={faHome}
+                    style={{ maxHeight: "1rem", overflow: "hidden" }}
+                  />{" "}
+                  {`   `} Home
                 </LinkWrapper>
               </Link>
             </li>
             <li className="mainNav__item">
               <Link to="/research/research">
                 <LinkWrapper>
-                  <FontAwesomeIcon icon={faAtom} /> {`   `} Research
+                  <FontAwesomeIcon
+                    icon={faAtom}
+                    style={{ maxHeight: "1rem", overflow: "hidden" }}
+                  />{" "}
+                  {`   `} Research
                 </LinkWrapper>
               </Link>
             </li>
@@ -158,21 +166,33 @@ const Footer = () => (
             <li className="mainNav__item">
               <Link to={data.site.siteMetadata.linkedin}>
                 <LinkWrapper>
-                  <FontAwesomeIcon icon={faLinkedin} /> {`   `} LinkedIn
+                  <FontAwesomeIcon
+                    icon={faLinkedin}
+                    style={{ maxHeight: "1rem", overflow: "hidden" }}
+                  />{" "}
+                  {`   `} LinkedIn
                 </LinkWrapper>
               </Link>
             </li>
             <li className="mainNav__item">
               <Link to={data.site.siteMetadata.github}>
                 <LinkWrapper>
-                  <FontAwesomeIcon icon={faGithub} /> {`   `} Github
+                  <FontAwesomeIcon
+                    icon={faGithub}
+                    style={{ maxHeight: "1rem", overflow: "hidden" }}
+                  />{" "}
+                  {`   `} Github
                 </LinkWrapper>
               </Link>
             </li>
             <li className="mainNav__item">
               <a href={`mailto:${data.site.siteMetadata.email}`}>
                 <LinkWrapper>
-                  <FontAwesomeIcon icon={faEnvelope} /> {`   `} Email
+                  <FontAwesomeIcon
+                    icon={faEnvelope}
+                    style={{ maxHeight: "1rem", overflow: "hidden" }}
+                  />{" "}
+                  {`   `} Email
                 </LinkWrapper>
               </a>
             </li>

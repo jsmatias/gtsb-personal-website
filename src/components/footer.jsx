@@ -94,6 +94,8 @@ const NavWrapper = styled.ul`
 `;
 
 const LinkWrapper = styled.div`
+  max-height: 48px;
+  overflow: hidden;
   color: ${colors.gray};
   &: hover {
     color: ${colors.white};
@@ -138,19 +140,19 @@ const Footer = () => (
               </Link>
             </li>
             <li className="mainNav__item">
-              <Link to="/research">
+              <Link to="/research/research">
                 <LinkWrapper>
                   <FontAwesomeIcon icon={faAtom} /> {`   `} Research
                 </LinkWrapper>
               </Link>
             </li>
-            <li className="mainNav__item">
+            {/* <li className="mainNav__item">
               <Link to="/projects">
                 <LinkWrapper>
                   <FontAwesomeIcon icon={faTerminal} /> {`   `} Projects
                 </LinkWrapper>
               </Link>
-            </li>
+            </li> */}
           </NavWrapper>
           <ContactWrapper>
             <li className="mainNav__item">

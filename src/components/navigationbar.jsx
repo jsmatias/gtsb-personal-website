@@ -32,6 +32,8 @@ const NavItem = styled.div`
 `;
 
 const NavSubItem = styled.a`
+  max-height: 48px;
+  overflow: hidden;
   display: block;
   float: left;
   padding: 0.5rem 1.5rem;
@@ -130,8 +132,7 @@ function NavigationBar() {
     >
       <NavItem className={`nav-item${isNavbarExpanded ? "-expanded" : ""}`}>
         <NavSubItem className="sub-item-heading" href="/">
-          <FontAwesomeIcon icon={faHome} style={{ fontSize: "16px" }} /> {`   `}{" "}
-          Home
+          <FontAwesomeIcon icon={faHome} /> {`   `} Home
         </NavSubItem>
       </NavItem>
       <NavItem className={`nav-item${isNavbarExpanded ? "-expanded" : ""}`}>
@@ -139,8 +140,7 @@ function NavigationBar() {
           className="sub-item-heading"
           onClick={toggleResearchSubMenu}
         >
-          <FontAwesomeIcon icon={faAtom} style={{ fontSize: "16px" }} /> {`   `}{" "}
-          Research
+          <FontAwesomeIcon icon={faAtom} /> {`   `} Research
         </NavSubItem>
         <List isOpen={isResearchSubMenuOpen}>
           <NavSubItem href="/research/research">My Research</NavSubItem>
